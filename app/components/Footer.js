@@ -77,7 +77,7 @@ export default function Footer() {
         <div className="container footer-bottom-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
           <div style={{ lineHeight: '1.6', fontSize: '0.9rem', color: '#ccc' }}>
             Copyright &copy; 2026 Photography UK Ltd. | All Rights Reserved.<br/>
-            Designed by <span style={{ color: '#F1C40F' }}>Digital Mitro.</span>
+            Designed by <a href="https://digitalmitro.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#F1C40F', textDecoration: 'none' }}>Digital Mitro.</a>
           </div>
           <div className="payment-icons" style={{ display: 'flex', gap: '5px', alignItems: 'center', flexWrap: 'wrap' }}>
             <span style={{ marginRight: '10px', color: '#ccc', fontSize: '0.9rem' }}>Payment method:</span>
