@@ -31,7 +31,7 @@ export default function Events() {
       ref.current.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
     }
     return () => observer.disconnect();
-  }, []);
+  }, [activeTab]);
 
   const filteredEvents = eventsList.filter(e => e.year === activeTab);
 
@@ -42,7 +42,7 @@ export default function Events() {
         <p className="section-subtitle animate-on-scroll">Browse our latest photo galleries from premier motoring events.</p>
         
         <div className="event-tabs animate-on-scroll">
-          {['2026', '2025', '2024', '2023', '2022'].map(year => (
+          {['2026', '2025'].map(year => (
             <button 
               key={year} 
               className={`event-tab ${activeTab === year ? 'active' : ''}`}

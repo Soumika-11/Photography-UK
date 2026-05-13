@@ -1,13 +1,7 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
-
-const CheckeredFlag = () => (
-  <svg width="50" height="35" viewBox="0 0 100 60" style={{ transform: 'rotate(-10deg) skewX(-15deg)', zIndex: 1, filter: 'drop-shadow(2px 2px 2px rgba(0,0,0,0.5))' }}>
-    <rect width="100" height="60" fill="white" />
-    <path d="M0 0h20v20H0zM40 0h20v20H40zM80 0h20v20H80zM20 20h20v20H20zM60 20h20v20H60zM0 40h20v20H0zM40 40h20v20H40zM80 40h20v20H80z" fill="black" />
-  </svg>
-);
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -49,26 +43,24 @@ export default function Header() {
         <div className="container">
           <nav className="nav-menu">
             <Link href="/" className="nav-link">HOME</Link>
-            <Link href="/products" className="nav-link">BUY RETAIL PRODUCTS</Link>
+            <Link href="/buy-retail-products" className="nav-link">BUY RETAIL PRODUCTS</Link>
             <div className="nav-dropdown">
               <span className="nav-link">EVENTS ▾</span>
               <div className="nav-dropdown-menu">
-                <Link href="#events">2026</Link>
-                <Link href="#events">2025</Link>
-                <Link href="#events">2024</Link>
+                <Link href="/events/2026">2026</Link>
+                <Link href="/events/2025">2025</Link>
               </div>
             </div>
           </nav>
 
           <Link href="/" className="logo">
-            <CheckeredFlag />
-            <span className="logo-text">Photography-uk</span>
+            <Image src="/images/logo.webp" alt="Photography UK Logo" width={240} height={70} priority />
           </Link>
           
           <nav className="nav-right nav-menu">
             <Link href="/products" className="nav-link">PRODUCTS</Link>
-            <Link href="#how-it-works" className="nav-link">HOW IT WORKS</Link>
-            <Link href="#contact" className="nav-link">CONTACT US</Link>
+            <Link href="/how-it-works" className="nav-link">HOW IT WORKS</Link>
+            <Link href="/contact" className="nav-link">CONTACT US</Link>
           </nav>
 
           <button className="mobile-menu-btn" aria-label="Menu">

@@ -1,4 +1,15 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
+const PaymentCard = ({ bg, color, text }) => (
+  <div style={{
+    background: bg, color: color, padding: '4px 8px', borderRadius: '4px',
+    fontSize: '10px', fontWeight: 'bold', border: '1px solid rgba(255,255,255,0.2)', 
+    display: 'flex', alignItems: 'center', height: '24px', letterSpacing: '0.5px'
+  }}>
+    {text}
+  </div>
+);
 
 export default function Footer() {
   return (
@@ -7,8 +18,8 @@ export default function Footer() {
         <div className="footer-grid">
           
           <div className="footer-col">
-            <Link href="/" className="footer-logo">
-              Photography<span>UK</span>
+            <Link href="/" className="footer-logo" style={{display: 'block', marginBottom: '20px'}}>
+              <Image src="/images/logo.webp" alt="Photography UK Logo" width={220} height={65} />
             </Link>
             <p className="footer-desc">
               Professional car show and event photographers covering the UK's premier motoring events. Providing high-quality prints, canvas, and digital downloads since 2005.
@@ -20,9 +31,9 @@ export default function Footer() {
             <div className="footer-links">
               <Link href="/">Home</Link>
               <Link href="/products">Find Your Car Photos</Link>
-              <Link href="#events">Events</Link>
+              <Link href="/#events">Events</Link>
               <Link href="/products">Products</Link>
-              <Link href="#how-it-works">How It Works</Link>
+              <Link href="/how-it-works">How It Works</Link>
             </div>
           </div>
 
@@ -63,12 +74,19 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <div className="container footer-bottom-inner">
-          <div>Copyright &copy; {new Date().getFullYear()} Photography UK Ltd. All Rights Reserved.</div>
-          <div className="payment-icons">
-            <svg width="32" height="20" viewBox="0 0 32 20" fill="currentColor"><rect width="32" height="20" rx="4"/></svg>
-            <svg width="32" height="20" viewBox="0 0 32 20" fill="currentColor"><rect width="32" height="20" rx="4"/></svg>
-            <svg width="32" height="20" viewBox="0 0 32 20" fill="currentColor"><rect width="32" height="20" rx="4"/></svg>
+        <div className="container footer-bottom-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '20px' }}>
+          <div style={{ lineHeight: '1.6', fontSize: '0.9rem', color: '#ccc' }}>
+            Copyright &copy; 2026 Photography UK Ltd. | All Rights Reserved.<br/>
+            Designed by <span style={{ color: '#F1C40F' }}>Digital Mitro.</span>
+          </div>
+          <div className="payment-icons" style={{ display: 'flex', gap: '5px', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span style={{ marginRight: '10px', color: '#ccc', fontSize: '0.9rem' }}>Payment method:</span>
+            <PaymentCard text="DISCOVER" bg="#fff" color="#ff6000" />
+            <PaymentCard text="VISA" bg="#fff" color="#1a1f71" />
+            <PaymentCard text="VISA Electron" bg="#0A3C7B" color="#fff" />
+            <PaymentCard text="Direct Debit" bg="#fff" color="#000" />
+            <PaymentCard text="PayPal" bg="#FFC439" color="#003087" />
+            <PaymentCard text="AMEX" bg="#016FD0" color="#fff" />
           </div>
         </div>
       </div>
